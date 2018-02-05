@@ -1,0 +1,27 @@
+NOTES ABOUT OPERATION OF ASSIGNMENT 1, PART 2
+
+Executables
+- output properly to redirected dump
+- do not output properly to terminal
+	- likely is executing in child process, not in parent terminal
+		- have set up a pipe to try to get that output into the terminal, but it still isn't working
+- does not output properly to redirect dump if there is no space before and after the '>'
+
+cd
+- works properly
+	- prints the current location of the user in the filesystem
+		- this isn't explicitly specified, but it's very helpful to the user
+
+jobs
+- outputs correctly
+
+exit
+- works properly
+
+wc
+- works properly
+
+background processes
+- queue correctly using the & symbol
+
+Please note that all the TODOs in the code comments were left there as indicators of where I thought improvements might be made.

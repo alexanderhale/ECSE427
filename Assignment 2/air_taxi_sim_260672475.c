@@ -129,7 +129,6 @@ void *FnAirplane(void* cl_id) {
 
       int lineStatus;
       sem_getvalue(&taxi_line_available, &lineStatus);
-      printf("Spaces in queue: %d\n", lineStatus);    // TODO remove
       if (!lineStatus) {
         // line for taxis is full, passenger doesn't join => discard
         // print message about rest of this plane's passengers taking bus
@@ -150,8 +149,8 @@ void *FnAirplane(void* cl_id) {
         sem_post(&taxi_line_taken);
       }
     }
-    sleep(1);   // sleep for 1 hour = 1 second
-    // pthread_exit(0);  // TODO: is this needed?
+    // printf("Airplane %d sleeping for 1 second.\n", plane_number); // testing only
+    usleep(1*1000000);   // sleep for 1 hour = 1 second
   }
   return NULL;
 }
@@ -172,7 +171,7 @@ void *FnTaxi(void* pr_id) {
     }
 
     // if the buffer is empty, let the producer run until it becomes non-empty
-    int waited = sem_wait(&taxi_line_taken);
+    sem_wait(&taxi_line_taken);
 
     pthread_mutex_lock(&buffer_mutex);
     int passenger = dequeue(queue);
@@ -188,9 +187,10 @@ void *FnTaxi(void* pr_id) {
     printf("Taxi driver %d picked up client %d from the platform. Trip length %d minutes.\n", taxi_number, passenger, sleepLength);
 
     // sleep this thread for the appropriate amount of time (converting to a fraction of a second between 1/6 to 1/2 seconds)
-    sleep(sleepLength / 60);
+    float f = (float)sleepLength / 60;
+    // printf("Taxi %d sleeping for %f seconds.\n", taxi_number, f);   // testing only
+    usleep(f*1000000);
   }
-  // pthread_exit(0);  // TODO: is this needed?
   return NULL;
 }
 
@@ -217,34 +217,23 @@ int main(int argc, char *argv[]) {
   //create arrays of integer pointers to ids for taxi / airplane threads
   int *taxi_ids[num_taxis];
   int *airplane_ids[num_airplanes];
-  int *z = malloc(sizeof(int));
 
   //create threads for airplanes
   for (int i = 0; i < num_airplanes; i++) {
-    *z = i;
-    airplane_ids[i] = z;
-    pthread_create(&planeThreads[i], NULL, FnAirplane, airplane_ids[i]);
+    airplane_ids[i] = malloc(sizeof(int));
+    *airplane_ids[i] = i;
+    if (pthread_create(&planeThreads[i], NULL, FnAirplane, airplane_ids[i]) != 0) {
+      printf("Error with Plane %d's thread creation.", i);
+    }
   }
 
   //create threads for taxis
   for (int i = 0; i < num_taxis; i++) {
-    *z = i;
-    taxi_ids[i] = z; 
-    pthread_create(&taxiThreads[i], NULL, FnTaxi, taxi_ids[i]);
-  }
-
-  // join airplane threads
-    // TODO: need to detach so that all threads start?
-  for (int i = 0; i < num_airplanes; i++) {
-    // airplane_ids[i] = i;
-    pthread_join(planeThreads[i], NULL);
-  }
-
-  // join taxi threads
-    // TODO: need to detach so that all threads start?
-  for (int i = 0; i < num_taxis; i++) {
-    // taxi_ids[i] = i;
-    pthread_join(taxiThreads[i], NULL);
+    taxi_ids[i] = malloc(sizeof(int));
+    *taxi_ids[i] = i; 
+    if (pthread_create(&taxiThreads[i], NULL, FnTaxi, taxi_ids[i]) != 0) {
+      printf("Error with Taxi %d's thread creation.", i);
+    }
   }
   
   pthread_mutex_destroy(&buffer_mutex);

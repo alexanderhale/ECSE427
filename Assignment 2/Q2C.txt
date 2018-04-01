@@ -1,0 +1,414 @@
+You entered: 10 airplanes per hour
+You entered: 2 taxis
+Creating airplane thread 0.
+Airplane 0 arrives with 8 passengers.
+Passenger 1000000 of airplane 0 enters the queue.
+Passenger 1000001 of airplane 0 enters the queue.
+Passenger 1000002 of airplane 0 enters the queue.
+Passenger 1000003 of airplane 0 enters the queue.
+Passenger 1000004 of airplane 0 enters the queue.
+Passenger 1000005 of airplane 0 enters the queue.
+Passenger 1000006 of airplane 0 enters the queue.
+Passenger 1000007 of airplane 0 enters the queue.
+Creating airplane thread 1.
+Airplane 1 arrives with 6 passengers.
+Passenger 1001000 of airplane 1 enters the queue.
+Passenger 1001001 of airplane 1 enters the queue.
+Passenger 1001002 of airplane 1 enters the queue.
+Passenger 1001003 of airplane 1 enters the queue.
+Passenger 1001004 of airplane 1 enters the queue.
+Passenger 1001005 of airplane 1 enters the queue.
+Creating airplane thread 2.
+Airplane 2 arrives with 7 passengers.
+Passenger 1002000 of airplane 2 enters the queue.
+Passenger 1002001 of airplane 2 enters the queue.
+Passenger 1002002 of airplane 2 enters the queue.
+Passenger 1002003 of airplane 2 enters the queue.
+Passenger 1002004 of airplane 2 enters the queue.
+Passenger 1002005 of airplane 2 enters the queue.
+Passenger 1002006 of airplane 2 enters the queue.
+Creating airplane thread 4.
+Airplane 4 arrives with 5 passengers.
+Passenger 1004000 of airplane 4 enters the queue.
+Passenger 1004001 of airplane 4 enters the queue.
+Passenger 1004002 of airplane 4 enters the queue.
+Passenger 1004003 of airplane 4 enters the queue.
+Passenger 1004004 of airplane 4 enters the queue.
+Creating airplane thread 5.
+Airplane 5 arrives with 8 passengers.
+Passenger 1005000 of airplane 5 enters the queue.
+Passenger 1005001 of airplane 5 enters the queue.
+Passenger 1005002 of airplane 5 enters the queue.
+Passenger 1005003 of airplane 5 enters the queue.
+Passenger 1005004 of airplane 5 enters the queue.
+Passenger 1005005 of airplane 5 enters the queue.
+Passenger 1005006 of airplane 5 enters the queue.
+Passenger 1005007 of airplane 5 enters the queue.
+Creating airplane thread 6.
+Airplane 6 arrives with 5 passengers.
+Passenger 1006000 of airplane 6 enters the queue.
+Passenger 1006001 of airplane 6 enters the queue.
+Passenger 1006002 of airplane 6 enters the queue.
+Passenger 1006003 of airplane 6 enters the queue.
+Passenger 1006004 of airplane 6 enters the queue.
+Creating airplane thread 7.
+Airplane 7 arrives with 6 passengers.
+Passenger 1007000 of airplane 7 enters the queue.
+Passenger 1007001 of airplane 7 enters the queue.
+Passenger 1007002 of airplane 7 enters the queue.
+Passenger 1007003 of airplane 7 enters the queue.
+Passenger 1007004 of airplane 7 enters the queue.
+Passenger 1007005 of airplane 7 enters the queue.
+Creating airplane thread 8.
+Airplane 8 arrives with 7 passengers.
+Passenger 1008000 of airplane 8 enters the queue.
+Passenger 1008001 of airplane 8 enters the queue.
+Passenger 1008002 of airplane 8 enters the queue.
+Passenger 1008003 of airplane 8 enters the queue.
+Passenger 1008004 of airplane 8 enters the queue.
+Passenger 1008005 of airplane 8 enters the queue.
+Passenger 1008006 of airplane 8 enters the queue.
+Creating airplane thread 9.
+Airplane 9 arrives with 9 passengers.
+Passenger 1009000 of airplane 9 enters the queue.
+Passenger 1009001 of airplane 9 enters the queue.
+Passenger 1009002 of airplane 9 enters the queue.
+Passenger 1009003 of airplane 9 enters the queue.
+Passenger 1009004 of airplane 9 enters the queue.
+Passenger 1009005 of airplane 9 enters the queue.
+Passenger 1009006 of airplane 9 enters the queue.
+Passenger 1009007 of airplane 9 enters the queue.
+Passenger 1009008 of airplane 9 enters the queue.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1000000 from the platform. Trip length 11 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1000001 from the platform. Trip length 12 minutes.
+Creating airplane thread 3.
+Airplane 3 arrives with 7 passengers.
+Passenger 1003000 of airplane 3 enters the queue.
+Passenger 1003001 of airplane 3 enters the queue.
+Passenger 1003002 of airplane 3 enters the queue.
+Passenger 1003003 of airplane 3 enters the queue.
+Passenger 1003004 of airplane 3 enters the queue.
+Passenger 1003005 of airplane 3 enters the queue.
+Passenger 1003006 of airplane 3 enters the queue.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1000002 from the platform. Trip length 20 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1000003 from the platform. Trip length 29 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1000004 from the platform. Trip length 13 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1000005 from the platform. Trip length 16 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1000006 from the platform. Trip length 10 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1000007 from the platform. Trip length 16 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1001000 from the platform. Trip length 22 minutes.
+Airplane 1 arrives with 6 passengers.
+Passenger 1001000 of airplane 1 enters the queue.
+Passenger 1001001 of airplane 1 enters the queue.
+Passenger 1001002 of airplane 1 enters the queue.
+Passenger 1001003 of airplane 1 enters the queue.
+Passenger 1001004 of airplane 1 enters the queue.
+Passenger 1001005 of airplane 1 enters the queue.
+Airplane 2 arrives with 6 passengers.
+Passenger 1002000 of airplane 2 enters the queue.
+Passenger 1002001 of airplane 2 enters the queue.
+Passenger 1002002 of airplane 2 enters the queue.
+Passenger 1002003 of airplane 2 enters the queue.
+Passenger 1002004 of airplane 2 enters the queue.
+Passenger 1002005 of airplane 2 enters the queue.
+Airplane 0 arrives with 8 passengers.
+Passenger 1000000 of airplane 0 enters the queue.
+Passenger 1000001 of airplane 0 enters the queue.
+Passenger 1000002 of airplane 0 enters the queue.
+Passenger 1000003 of airplane 0 enters the queue.
+Passenger 1000004 of airplane 0 enters the queue.
+Passenger 1000005 of airplane 0 enters the queue.
+Passenger 1000006 of airplane 0 enters the queue.
+Passenger 1000007 of airplane 0 enters the queue.
+Airplane 4 arrives with 7 passengers.
+Passenger 1004000 of airplane 4 enters the queue.
+Passenger 1004001 of airplane 4 enters the queue.
+Passenger 1004002 of airplane 4 enters the queue.
+Passenger 1004003 of airplane 4 enters the queue.
+Passenger 1004004 of airplane 4 enters the queue.
+Passenger 1004005 of airplane 4 enters the queue.
+Passenger 1004006 of airplane 4 enters the queue.
+Airplane 5 arrives with 9 passengers.
+Passenger 1005000 of airplane 5 enters the queue.
+Passenger 1005001 of airplane 5 enters the queue.
+Passenger 1005002 of airplane 5 enters the queue.
+Passenger 1005003 of airplane 5 enters the queue.
+Passenger 1005004 of airplane 5 enters the queue.
+Passenger 1005005 of airplane 5 enters the queue.
+Passenger 1005006 of airplane 5 enters the queue.
+Passenger 1005007 of airplane 5 enters the queue.
+Passenger 1005008 of airplane 5 enters the queue.
+Airplane 6 arrives with 7 passengers.
+Passenger 1006000 of airplane 6 enters the queue.
+Passenger 1006001 of airplane 6 enters the queue.
+Passenger 1006002 of airplane 6 enters the queue.
+Passenger 1006003 of airplane 6 enters the queue.
+Passenger 1006004 of airplane 6 enters the queue.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 7 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 8 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 9 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 3 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1001001 from the platform. Trip length 25 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1001002 from the platform. Trip length 19 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1001003 from the platform. Trip length 12 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1001004 from the platform. Trip length 12 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1001005 from the platform. Trip length 28 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1002000 from the platform. Trip length 19 minutes.
+Airplane 1 arrives with 7 passengers.
+Passenger 1001000 of airplane 1 enters the queue.
+Passenger 1001001 of airplane 1 enters the queue.
+Passenger 1001002 of airplane 1 enters the queue.
+Passenger 1001003 of airplane 1 enters the queue.
+Passenger 1001004 of airplane 1 enters the queue.
+Passenger 1001005 of airplane 1 enters the queue.
+Platform is full. Rest of passengers of plane 1 take the bus.
+Airplane 2 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 2 take the bus.
+Airplane 0 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 0 take the bus.
+Airplane 4 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 4 take the bus.
+Airplane 5 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 5 take the bus.
+Airplane 6 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 7 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 8 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 9 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 3 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1002001 from the platform. Trip length 27 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1002002 from the platform. Trip length 28 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1002003 from the platform. Trip length 14 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1002004 from the platform. Trip length 25 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1002005 from the platform. Trip length 20 minutes.
+Airplane 0 arrives with 8 passengers.
+Passenger 1000000 of airplane 0 enters the queue.
+Passenger 1000001 of airplane 0 enters the queue.
+Passenger 1000002 of airplane 0 enters the queue.
+Passenger 1000003 of airplane 0 enters the queue.
+Passenger 1000004 of airplane 0 enters the queue.
+Platform is full. Rest of passengers of plane 0 take the bus.
+Airplane 2 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 2 take the bus.
+Airplane 1 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 1 take the bus.
+Airplane 8 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 6 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 9 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 7 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 5 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 5 take the bus.
+Airplane 4 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 4 take the bus.
+Airplane 3 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1002006 from the platform. Trip length 15 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1004000 from the platform. Trip length 15 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1004001 from the platform. Trip length 14 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1004002 from the platform. Trip length 17 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1004003 from the platform. Trip length 26 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1004004 from the platform. Trip length 15 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1005000 from the platform. Trip length 16 minutes.
+Airplane 2 arrives with 9 passengers.
+Passenger 1002000 of airplane 2 enters the queue.
+Passenger 1002001 of airplane 2 enters the queue.
+Passenger 1002002 of airplane 2 enters the queue.
+Passenger 1002003 of airplane 2 enters the queue.
+Passenger 1002004 of airplane 2 enters the queue.
+Passenger 1002005 of airplane 2 enters the queue.
+Passenger 1002006 of airplane 2 enters the queue.
+Platform is full. Rest of passengers of plane 2 take the bus.
+Airplane 0 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 0 take the bus.
+Airplane 1 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 1 take the bus.
+Airplane 9 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 7 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 5 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 5 take the bus.
+Airplane 6 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 4 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 4 take the bus.
+Airplane 8 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 3 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1005001 from the platform. Trip length 14 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1005002 from the platform. Trip length 13 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1005003 from the platform. Trip length 20 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1005004 from the platform. Trip length 17 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1005005 from the platform. Trip length 18 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1005006 from the platform. Trip length 26 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1005007 from the platform. Trip length 28 minutes.
+Airplane 0 arrives with 8 passengers.
+Passenger 1000000 of airplane 0 enters the queue.
+Passenger 1000001 of airplane 0 enters the queue.
+Passenger 1000002 of airplane 0 enters the queue.
+Passenger 1000003 of airplane 0 enters the queue.
+Passenger 1000004 of airplane 0 enters the queue.
+Passenger 1000005 of airplane 0 enters the queue.
+Passenger 1000006 of airplane 0 enters the queue.
+Platform is full. Rest of passengers of plane 0 take the bus.
+Airplane 1 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 1 take the bus.
+Airplane 2 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 2 take the bus.
+Airplane 5 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 5 take the bus.
+Airplane 7 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 6 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 8 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 4 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 4 take the bus.
+Airplane 9 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 3 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1006000 from the platform. Trip length 29 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1006001 from the platform. Trip length 22 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1006002 from the platform. Trip length 16 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1006003 from the platform. Trip length 16 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1006004 from the platform. Trip length 24 minutes.
+Airplane 1 arrives with 9 passengers.
+Passenger 1001000 of airplane 1 enters the queue.
+Passenger 1001001 of airplane 1 enters the queue.
+Passenger 1001002 of airplane 1 enters the queue.
+Passenger 1001003 of airplane 1 enters the queue.
+Passenger 1001004 of airplane 1 enters the queue.
+Platform is full. Rest of passengers of plane 1 take the bus.
+Airplane 0 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 0 take the bus.
+Airplane 2 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 2 take the bus.
+Airplane 6 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 7 arrives with 8 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 8 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 4 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 4 take the bus.
+Airplane 5 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 5 take the bus.
+Airplane 9 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 3 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1007000 from the platform. Trip length 22 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1007001 from the platform. Trip length 22 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1007002 from the platform. Trip length 26 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1007003 from the platform. Trip length 11 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1007004 from the platform. Trip length 10 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1007005 from the platform. Trip length 16 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1008000 from the platform. Trip length 11 minutes.
+Airplane 0 arrives with 5 passengers.
+Passenger 1000000 of airplane 0 enters the queue.
+Passenger 1000001 of airplane 0 enters the queue.
+Passenger 1000002 of airplane 0 enters the queue.
+Passenger 1000003 of airplane 0 enters the queue.
+Passenger 1000004 of airplane 0 enters the queue.
+Airplane 2 arrives with 9 passengers.
+Passenger 1002000 of airplane 2 enters the queue.
+Passenger 1002001 of airplane 2 enters the queue.
+Platform is full. Rest of passengers of plane 2 take the bus.
+Airplane 1 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 1 take the bus.
+Airplane 7 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 7 take the bus.
+Airplane 8 arrives with 5 passengers.
+Platform is full. Rest of passengers of plane 8 take the bus.
+Airplane 4 arrives with 9 passengers.
+Platform is full. Rest of passengers of plane 4 take the bus.
+Airplane 6 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 6 take the bus.
+Airplane 5 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 5 take the bus.
+Airplane 9 arrives with 7 passengers.
+Platform is full. Rest of passengers of plane 9 take the bus.
+Airplane 3 arrives with 6 passengers.
+Platform is full. Rest of passengers of plane 3 take the bus.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1008001 from the platform. Trip length 11 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1008002 from the platform. Trip length 25 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1008003 from the platform. Trip length 19 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1008004 from the platform. Trip length 17 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1008005 from the platform. Trip length 17 minutes.
+Taxi driver 0 arrives.
+Taxi driver 0 picked up client 1008006 from the platform. Trip length 26 minutes.
+Taxi driver 1 arrives.
+Taxi driver 1 picked up client 1009000 from the platform. Trip length 27 minutes.
+Airplane 0 arrives with 8 passengers.
+Passenger 1000000 of airplane 0 enters the queue.
+Passenger 1000001 of airplane 0 enters the queue.
+Passenger 1000002 of airplane 0 enters the queue.
+Passenger 1000003 of airplane 0 enters the queue.
+Passenger 1000004 of airplane 0 e

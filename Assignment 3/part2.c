@@ -16,13 +16,12 @@ int cmpfunc (const void * a, const void * b) {
 
 //function to swap 2 integers
 void swap(int *a, int *b) {
-    if (*a != *b)
-    {
+    if (*a != *b) {
         *a = (*a ^ *b);
         *b = (*a ^ *b);
         *a = (*a ^ *b);
-        return;
     }
+    return;
 }
 
 // function to find the indexes where START would fit in an array
@@ -226,7 +225,6 @@ void accessCSCAN(int *request, int numRequest) {
             newRequest[i - indexBelow + j] = request[j];
         }
     }
-    // TODO: case 2 and 3 can probably be combined into one case
 
     printf("\n----------------\n");
     printf("CSCAN :");

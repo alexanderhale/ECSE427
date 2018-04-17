@@ -1,5 +1,10 @@
+// NAME: Alex Hale
+// ID: 260672475
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
+#include <unistd.h>
 
 int i = 0;  // number of processes
 int j = 0;  // number of resources
@@ -14,6 +19,8 @@ int isSafe(int j, int i) {
     int *work = malloc(j * sizeof(int));
     int *finish = malloc(i * sizeof(int));  
     int t, s;
+
+    // TODO: implement a mutex to make sure only one thread gets these values at a time
     for (t = 0; t < j; t++) {
         work[t] = avail[t];
     }
@@ -25,6 +32,7 @@ int isSafe(int j, int i) {
     for (t = 0; t < i; t++) {
         if (finish[t] == 0) {
             for (s = 0; s < j; s++) {
+                // TODO: implement a mutex to make sure only one thread changes these at a time
                 if (need[t][s] <= work[s]) {        // process i's needs are <= the available resources
                     work[s] = work[s] + hold[t][s]; // simulate process i releasing what it was holding, because it has finished
                     finish[t] = 1;
@@ -49,23 +57,25 @@ int isSafe(int j, int i) {
 
 // implementation of Banker's Algorithm as described in the slides
     // returns 1 if the request is granted, 0 if it is not granted
-int bankers_algorithm(int pr_id, int req) {
+int bankers_algorithm(int pr_id, int *req) {
     int s;
     for (s = 0; s < j; s++) {
-        if req[s] > need[pr_id][s]) {
+        if (req[s] > need[pr_id][s]) {
             // return an error, a process can't request more than it needs
             return -1;
-        } else if req[s] > avail[s]) {
+        } else if (req[s] > avail[s]) {
             // the process needs more resources than are available, so it must wait.
             return 0;
         } else {
             // provisional allocation of this resource
+            // TODO: implement a mutex to make sure only one thread changes these at a time
             avail[s] = avail[s] - req[s];
             hold[pr_id][s] = hold[pr_id][s] + req[s];
             need[pr_id][s] = need[pr_id][s] - req[s];
 
             if (!isSafe(j, i)) {
                 // the system isn't safe with this resource allocation, so revert the changes made
+                // TODO: implement a mutex to make sure only one thread changes these at a time
                 avail[s] = avail[s] + req[s];
                 hold[pr_id][s] = hold[pr_id][s] - req[s];
                 need[pr_id][s] = need[pr_id][s] + req[s];
@@ -106,6 +116,7 @@ void* process_simulator(void* pr_id) {
         // the process has acquired the resources, it can keep executing (step 4)
         moreRequests = 0;
         for (s = 0; s < j; s++) {
+            // TODO: implement a mutex to make sure only one thread changes these at a time
             if (need[pid][s] > 0) {
                 moreRequests = 1;       // if this process has more requests to request, continue executing (step 5b)
             }
@@ -120,10 +131,11 @@ void* process_simulator(void* pr_id) {
 // simulates a fault occuring on the system.
 void* fault_simulator(void* pr_id) {
     while(1) {
-        int resourceToBeDoomed = rand() % j
+        int resourceToBeDoomed = rand() % j;
         int couldBeDoomed = rand() % 10;
 
         if (couldBeDoomed > 5) {
+            // TODO: implement a mutex to make sure only one thread changes these at a time
             avail[resourceToBeDoomed]--;        // take away one unit of the randomly selected resource
             usleep(10*1000000);
             avail[resourceToBeDoomed]++;        // fault is over, return the resource
@@ -151,7 +163,7 @@ void* deadlock_checker(void * pr_id) {
             printf("Deadlock will occur as processes request more resources, exiting.\n");
         }
         
-        sleep(10*1000000);   // take a nap for 10 seconds until we want to check for deadlock again
+        usleep(10*1000000);   // take a nap for 10 seconds until we want to check for deadlock again
         printf("Checking for deadlock\n");
     }
     return NULL;
@@ -205,7 +217,8 @@ int main (int argc, char *argv[]) {
             allocatedResources += (char)hold[t][s];
             allocatedResources += ' ';
         }
-        allocatedResources += "| ";
+        allocatedResources += '|';
+        allocatedResources += ' ';
     }
     printf("\n\nThe number of each type of resources that each process is holding is: %s", allocatedResources);
     free(allocatedResources);
@@ -216,7 +229,8 @@ int main (int argc, char *argv[]) {
             maximumResources += (char)max[t][s];
             maximumResources += ' ';
         }
-        maximumResources += "| ";
+        maximumResources += '|';
+        maximumResources += ' ';
     }
     printf("\n\nThe maximum number of each type of resources that each process can claim is: %s", maximumResources);
     free(maximumResources);
@@ -246,9 +260,8 @@ int main (int argc, char *argv[]) {
     int *fault_id = malloc(sizeof(int));
     *fault_id = i+2;
     if (pthread_create(&fault_thread, NULL, fault_simulator, fault_id) != 0) {
-        printf("Error with fault simulator thread creation.")
+        printf("Error with fault simulator thread creation.");
     }
-
 
     //create a thread to check for deadlock (deadlock_checker)
     pthread_t deadlock_thread;

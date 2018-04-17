@@ -1,3 +1,6 @@
+// NAME: Alex Hale
+// ID: 260672475
+
 #include <stdio.h>  //for printf and scanf
 #include <stdlib.h> //for malloc
 
@@ -27,14 +30,13 @@ void swap(int *a, int *b) {
 // function to find the indexes where START would fit in an array
     // the value returned is the index BELOW the index where START would go
         // i.e. the value at the returned index is the highest value in the array that is still lower than START
+    // array must be sorted!
 int indexOfStart(int *array, int arrayLength) {
     int i;
     int highestValue = array[0];
-    int highestValuesIndex = -1;
+    int highestValueIndex = -1;
     for (i = 1; i < arrayLength; i++) {
-        if (array[i] >= START) {
-            break;
-        } else if (array[i] > highestValue) {
+        if (array[i] > highestValue && array[i] < START) {
             highestValue = array[i];
             highestValueIndex = i;
         }
@@ -78,7 +80,7 @@ void accessSSTF(int *request, int numRequest) {
     // find the closest integer to request[0], put in request[1]
     // etc
     int i, j;
-	int diff = 200;
+	int diff = HIGH - LOW;
 	int index = -1;
 	for (i = 0; i < numRequest; i++) {
 		if (abs(START - request[i]) < diff) {
@@ -86,17 +88,20 @@ void accessSSTF(int *request, int numRequest) {
 			index = i;
 		}
 	}
-	swap(request[0], request[index]);
+	swap(&request[0], &request[index]);
 
 	for (i = 1; i < numRequest - 1; i++) {
-		diff = abs(request[i] - request[i+1]);
+		diff = abs(request[i-1] - request[i]);
+        index = i;
 		for (j = i+1; j < numRequest; j++) {
-			if (abs(request[i] - request[j]) < diff) {
-				diff = abs(request[i] - request[j]);
+			if (abs(request[i-1] - request[j]) < diff) {
+				diff = abs(request[i-1] - request[j]);
 				index = j;
 			}
 		}
-		swap(request[i], request[j]);
+        if (i != index) {
+		    swap(&request[i], &request[index]);
+        }
 	}
 
     printf("\n----------------\n");
@@ -127,14 +132,12 @@ void accessSCAN(int *request, int numRequest) {
         qsort(newRequest, newCnt, sizeof(int), cmpfunc);
 
         // find the lowest value that is lower than START
-        int indexBelow = indexOfStart(request, numRequest);
+        int indexBelow = indexOfStart(newRequest, newCnt);
 
         // exchange the values below START to be accessed in descending order
-        int i = 0;
+        i = 0;
         while (i < indexBelow/2) {
-            int temp = newRequest[i];
-            newRequest[indexBelow - i] = newRequest[i];
-            newRequest[i] = temp;
+            swap(&newRequest[i], &newRequest[indexBelow - i]);
             i++;
         }
 
@@ -148,19 +151,22 @@ void accessSCAN(int *request, int numRequest) {
         qsort(newRequest, newCnt, sizeof(int), cmpfunc);
 
         // find the lowest value that is higher than START
-        int indexAbove = indexOfStart(request, numRequest) + 1;
+        int indexAbove = indexOfStart(newRequest, newCnt) + 1;
 
-        // move the values above START to be printed first
-        int i;
+        // move the values above START to be printed first, in ascending order
         for (i = indexAbove; i < newCnt; i++) {
-            newRequest[i-indexAbove] = request[i];
+            swap(&newRequest[i - indexAbove], &newRequest[i]);
         }
 
-        // move the values below START to be printed next, in descending order
-        int j;
-        i = i - indexAbove + 1;
-        for (j = indexAbove - 1; j >= 0; j--) {
-            newRequest[i] = request[j];
+        // sort the values below START into ascending order
+            // index of last-moved number is newCnt - indexAbove
+        qsort(&newRequest[newCnt - indexAbove], indexAbove, sizeof(int), cmpfunc);
+
+        // rearrange the values below START into descending order
+        i = newCnt - indexAbove;
+        int midway = i + (newCnt - 1 - i)/2;
+        while (i < midway) {
+            swap(&newRequest[i], &newRequest[midway + (midway - i)]);
             i++;
         }
     }
@@ -182,20 +188,23 @@ void accessCSCAN(int *request, int numRequest) {
     // find where START fits in
     int indexBelow = indexOfStart(request, numRequest);
 
+    int newCnt;
+    int *newRequest;
+
     if (indexBelow < 0) {
         // if START fits in the first index, print the array in ascending order
-        int newCnt = numRequest;
-        int *newRequest = malloc(newCnt * sizeof(int));
+        newCnt = numRequest;
+        newRequest = malloc(newCnt * sizeof(int));
 
         // copy values into new array
         int i;
         for (i = 0; i < newCnt; i++) {
             newRequest[i] = request[i];
         }
-    } else if (indexBelow = numRequest - 1) {
+    } else if (indexBelow == numRequest - 1) {
         // if START fits in the last index, print START -> HIGH -> LOW -> array in ascending order
-        int newCnt = numRequest + 2;
-        int *newRequest = malloc(newCnt * sizeof(int));
+        newCnt = numRequest + 2;
+        newRequest = malloc(newCnt * sizeof(int));
 
         newRequest[0] = HIGH;
         newRequest[1] = LOW;
@@ -209,8 +218,8 @@ void accessCSCAN(int *request, int numRequest) {
             // print START -> the values above START, in ascending order
             // print HIGH -> LOW
             // print the values below START, in ascending order
-        int newCnt = numRequest + 2;
-        int *newRequest = malloc(newCnt * sizeof(int));
+        newCnt = numRequest + 2;
+        newRequest = malloc(newCnt * sizeof(int));
 
         int i;
         for (i = indexBelow + 1; i < numRequest; i++) {
@@ -222,7 +231,7 @@ void accessCSCAN(int *request, int numRequest) {
 
         int j;
         for (j = 0; j <= indexBelow; j++) {
-            newRequest[i - indexBelow + j] = request[j];
+            newRequest[i - indexBelow + 1 + j] = request[j];
         }
     }
 
@@ -238,6 +247,9 @@ void accessLOOK(int *request, int numRequest) {
     // sort array
     qsort(request, numRequest, sizeof(int), cmpfunc);
 
+    // find where START fits in
+    int indexBelow = indexOfStart(request, numRequest);
+
     int newCnt = numRequest;
     int *newRequest = malloc(newCnt * sizeof(int));
 
@@ -250,9 +262,8 @@ void accessLOOK(int *request, int numRequest) {
         }
 
         // print the values below START, in descending order
-        int j;
-        for (j = indexBelow; j >= 0; j--) {
-            newRequest[i + indexBelow - j] = request[j];
+        for (i = indexBelow; i >= 0; i--) {
+            newRequest[numRequest - i - 1] = request[i];
         }
     } else {
         // request[0] is closer to START
@@ -279,6 +290,9 @@ void accessLOOK(int *request, int numRequest) {
 //access the disk location in CLOOK
 void accessCLOOK(int *request, int numRequest) {
     // LOOKING IN ASCENDING ORDER
+        // NOTE: it was unclear from my notes whether the heads are 
+        // returned to LOW or to the lowest request. I chose the lowest
+        // request, hopefully that's correct.
 
     // sort array
     qsort(request, numRequest, sizeof(int), cmpfunc);
@@ -286,24 +300,24 @@ void accessCLOOK(int *request, int numRequest) {
     // find where START fits in
     int indexBelow = indexOfStart(request, numRequest);
 
+    int newCnt = numRequest;
+    int *newRequest = malloc(newCnt * sizeof(int));
     if (indexBelow < 0) {
         // if START fits in the first index
         // print the values above START, in ascending order
-        int newCnt = numRequest;
-        int *newRequest = malloc(newCnt * sizeof(int));
+        newCnt = numRequest;
+        newRequest = malloc(newCnt * sizeof(int));
 
         // copy values into new array
         int i;
         for (i = 0; i < newCnt; i++) {
             newRequest[i] = request[i];
         }
-    } else if (indexBelow == numRequest - 1) {}
+    } else if (indexBelow == numRequest - 1) {
         // if START fits in the last index
-        int newCnt = numRequest + 1;
-        int *newRequest = malloc(newCnt * sizeof(int));
 
         // print LOW
-        newRequest[0] = LOW
+        // newRequest[i - indexBelow] = LOW;
 
         // print the values in ascending order
         int i;
@@ -312,11 +326,6 @@ void accessCLOOK(int *request, int numRequest) {
         }
     } else {
         // if START fits in the middle somewhere
-        int newCnt = numRequest + 1;
-        int *newRequest = malloc(newCnt * sizeof(int));
-
-         // find where START fits in
-        int indexBelow = indexOfStart(request, numRequest);
 
         // print the values above START, in ascending order
         int i;
@@ -325,13 +334,11 @@ void accessCLOOK(int *request, int numRequest) {
         }
 
         // print LOW
-        newRequest[i - indexBelow] = LOW;
+        // newRequest[i - indexBelow] = LOW;
 
         // print the values below START, in ascending order
-        int j;
-        for (j = 0; j < indexBelow + 1; j++) {
-            newRequest[i - indexBelow + 1] = request[j];
-            i++;
+        for (i = 0; i < indexBelow + 1; i++) {
+            newRequest[numRequest - (indexBelow - i) - 1] = request[i];
         }
     }
     printf("\n----------------\n");
